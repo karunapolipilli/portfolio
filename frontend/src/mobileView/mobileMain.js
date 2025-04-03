@@ -42,7 +42,7 @@ function Profile() {
           <div id="email_text">
             Email
             <br />
-            polipillikaruna2004@gmail.com
+            karunapolipilli08@gmail@gmail.com
           </div>
         </div>
         <div id="phone">
