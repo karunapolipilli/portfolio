@@ -248,6 +248,34 @@ function Projects() {
   return projects;
 }
 function Contact() {
+
+   const[name,setName]=useState("")
+  const[email,setEmail]=useState("")
+  const[message,setMsg]=useState("")
+   const formData={name,email,message}
+
+ const handleSubmit = async (e) => {
+    e.preventDefault();
+    try{
+     const response = await fetch('https://portfolio-backend-mae6.onrender.com/user/add-user', {
+       method: 'POST',
+       headers: { 'Content-Type': 'application/json' },
+       body: JSON.stringify(formData),
+     
+     });
+   
+   if(response.ok){
+     alert('Contact added successfully!');
+     } else {
+       alert('Error adding contact');
+     }
+   } catch (error) {
+     alert('Error: ' + error.message);
+   }
+
+  };
+
+  
   let contact = (
     <div id="contact_section">
       <form id="mobile_form">
