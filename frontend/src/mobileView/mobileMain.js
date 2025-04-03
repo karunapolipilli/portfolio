@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import profile_photo from "../img/photo.jpg";
 import pythonfordata from "../img/pythonfordata.jpg";
 import programming_java from "../img/programming_java.jpg";
