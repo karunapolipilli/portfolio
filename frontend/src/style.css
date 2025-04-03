@@ -538,16 +538,15 @@ header {
     top: 30px;
     left: 10px;
 }
-#certifications_set{
-    
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-    padding:10px;
+#certifications_set {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Wider certificate boxes */
+    gap: 20px; /* More spacing for better alignment */
+    padding: 20px; /* Adjust padding */
     justify-content: center;
-    align-items:center;
-    
 }
+
+
 #certifications_heading{
     padding-left:30px;
 }
@@ -560,27 +559,27 @@ header {
     top: 65px;
     left:40px;
 }
-.certifications{
-    
-    height:350px;
-    width:350px;
-    border-radius: 15px;
-    border: 2px solid rgba(2, 2, 2, 0.2);
+.certifications {
+    width: 100%; /* Ensures certificates fit within grid */
+    max-width: 280px; /* Restricts max size for better alignment */
+    height: auto; /* Adjusts height automatically */
+    border-radius: 10px;
     box-shadow: 0px 4px 10px #161616;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-   
 }
-.certifications img{
-    width:100%;
-    height:100%;
-    object-fit: contain;
 
+.certifications img {
+    width: 100%;
+    height: auto;
+    max-height: 250px; /* Adjust max height for uniformity */
+    object-fit: cover; /* Ensures images are cropped evenly */
+    border-radius: 10px; /* Keeps border styling consistent */
 }
+
 .certifications:hover{
     transform:translateY(-2px);
     box-shadow:0px 6px 20px #0f0f0e; 
 }
-#Certifi_main{
-    padding-top: 50px;
-    padding-left:50px;
+#Certifi_main {
+    padding: 30px 10px; /* Less padding for better fit */
 }
