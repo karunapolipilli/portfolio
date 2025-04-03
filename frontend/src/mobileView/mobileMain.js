@@ -1,27 +1,19 @@
-import React,{useState} from "react";
+import React from "react";
 import profile_photo from "../img/photo.jpg";
+import dbms from "../img/dbms.jpg";
 import pythonfordata from "../img/pythonfordata.jpg";
 import programming_java from "../img/programming_java.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faJava,
-  faPython,
-  faHtml5,
-  faCss3Alt,
-  faJs,
-  faNodeJs,
   faLinkedin,
   faGithub,
   faInstagram,
-  faReact,
 } from "@fortawesome/free-brands-svg-icons";
 import {
   faBook,
-  faDatabase,
   faEnvelope,
   faLocationDot,
   faPhone,
-  faServer,
 } from "@fortawesome/free-solid-svg-icons";
 
 function Profile() {
@@ -42,7 +34,7 @@ function Profile() {
           <div id="email_text">
             Email
             <br />
-            karunapolipilli08@gmail@gmail.com
+            karunapolipilli08@gmail.com
           </div>
         </div>
         <div id="phone">
@@ -52,7 +44,7 @@ function Profile() {
           <div id="phone_text">
             Phone
             <br />
-            6305083835
+         
           </div>
         </div>
         <div id="location">
@@ -66,17 +58,17 @@ function Profile() {
           </div>
         </div>
         <div id="social_icons">
-          <span className="social_icons" onClick={()=>window.open("https://www.linkedin.com/in/karunapolipilli","_blank")}>
+          <span className="social_icons" onClick={() => window.open("https://www.linkedin.com/in/karunapolipilli", "_blank")}>
             <FontAwesomeIcon icon={faLinkedin} />
           </span>
-          <span className="social_icons"onClick={()=>window.open("https://github.com/karunapolipilli")}>
+          <span className="social_icons" onClick={() => window.open("https://github.com/karunapolipilli")}>
             <FontAwesomeIcon icon={faGithub} />
           </span>
-         <span className="contact_icons" onClick={()=>window.open("https://www.instagram.com/karunasmiley/")}>
-                     <div id="skills_fa">
-                       <FontAwesomeIcon icon={faInstagram} />
-                     </div>
-             </span>
+          <span className="contact_icons" onClick={() => window.open("https://www.instagram.com/karunasmiley/")}>
+            <div id="skills_fa">
+              <FontAwesomeIcon icon={faInstagram} />
+            </div>
+          </span>
         </div>
       </div>
     </div>
@@ -92,7 +84,7 @@ function About() {
       </div>
       <div id="mobile_about_text">
         <p>
-        <p> Hi, I'm Karuna, a passionate Software Engineer specializing in building innovative and efficient solutions.</p>
+          <p> Hi, I'm Karuna, a passionate Software Engineer specializing in building innovative and efficient solutions.</p>
           <br />
           I am a quick learner and a team player.
           <br /> I have experience in developing web applications using React,
@@ -200,17 +192,20 @@ function Resume() {
           </div>
         </div>
         <div id="certifications">
-          <h3 id="certifications_heading">certifications</h3>
-            <div className="mobile_certifications">
-              <div className="m_certifications">
-                <img src={programming_java} alt="img" />
-                </div>
+          <h3 id="certifications_heading">Certifications</h3>
+          <div className="mobile_certifications">
+            <div className="m_certifications">
+              <img src={programming_java} alt="img" width={300} height={200} />
             </div>
-            <div className="mobile_certifications">
-              <div className="m_certifications">
-                 <img src={pythonfordata} alt="img" />
-                </div>
-            </div> 
+            </div>
+            
+            <div className="m_certifications">
+              <img src={pythonfordata} alt="img" width={300} height={200} />
+            </div>
+            <div className="m_certifications">
+              <img src={dbms} alt="img" width={300} height={200} />
+            </div>
+          
         </div>
       </div>
     </div>
@@ -233,64 +228,26 @@ function Projects() {
           <h4>Technologies:</h4>
           <p>HTML, CSS, JavaScript, React Js, Node.js, Express.js, MongoDB</p>
         </div>
-        {/* <div className="project">
-          <h3>E-Commerce Webiste</h3>
-          <p>
-            An e-commerce platform with product listings, cart, and payment
-            integration.
-          </p>
-          <h4>Technologies:</h4>
-          <p>React, Node.js, Express, MongoDB</p>
-        </div> */}
       </div>
     </div>
   );
   return projects;
 }
 function Contact() {
-
-   const[name,setName]=useState("")
-  const[email,setEmail]=useState("")
-  const[message,setMsg]=useState("")
-   const formData={name,email,message}
-
- const handleSubmit = async (e) => {
-    e.preventDefault();
-    try{
-     const response = await fetch('https://portfolio-backend-mae6.onrender.com/user/add-user', {
-       method: 'POST',
-       headers: { 'Content-Type': 'application/json' },
-       body: JSON.stringify(formData),
-     
-     });
-   
-   if(response.ok){
-     alert('Contact added successfully!');
-     } else {
-       alert('Error adding contact');
-     }
-   } catch (error) {
-     alert('Error: ' + error.message);
-   }
-
-  };
-
-  
-   return (
-    <div>
-      <form id="form" onSubmit={handleSubmit}>
+  let contact = (
+    <div id="contact_section">
+      <form id="mobile_form">
         <div>
           <h2>Contact me</h2>
           <br />
         </div>
-        <div id="txtmail">
+        <div id="textmail">
           <div>
             <input
               type="text"
               placeholder="Full Name"
               id="Fname"
               name="firstname"
-              onChange={(e)=>setName(e.target.value)}
             ></input>
             <br />
             <br />
@@ -300,9 +257,8 @@ function Contact() {
               <input
                 type="email"
                 placeholder="Email address"
-                id="mailid"
+                id="Mailid"
                 name="mailid"
-                onChange={(e)=>setEmail(e.target.value)} 
               ></input>
             </div>
             <br />
@@ -310,14 +266,25 @@ function Contact() {
         </div>
         <br />
         <div>
-          <input type="text" placeholder="Type Message" id="msg"  onChange={(e)=>setMsg(e.target.value)}></input>
+          <input type="text" placeholder="Type Message" id="Msg"></input>
         </div>
-        <br />{" "}
-        <div>
-          <input type="submit" value="Send Message" id="mobile_submit"></input>
-        </div>
+        <br />
+        <input type="Submit" value="Send Message" id="mobile_submit"></input>
       </form>
     </div>
+  );
+  return contact;
+}
+function MobileMain() {
+  return (
+    <main id="mobileMain">
+      <Profile />
+      <About />
+      <Skills />
+      <Resume />
+      <Projects />
+      <Contact />
+    </main>
   );
 }
 
