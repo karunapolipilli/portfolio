@@ -5,7 +5,7 @@ const Contact = () => {
   const[name,setName]=useState("")
   const[email,setEmail]=useState("")
   const[message,setMsg]=useState("")
-   const formData={name,email,message}
+   
   const backendurl="https://portfolio-backend-mae6.onrender.com";
 
    
@@ -16,6 +16,7 @@ const Contact = () => {
 
  const handleSubmit = async (e) => {
     e.preventDefault();
+   const formData={name,email,message}
     try{
      const response = await fetch(`${backendurl}/contact`, {
        method: 'POST',
