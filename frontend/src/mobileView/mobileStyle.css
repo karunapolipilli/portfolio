@@ -312,6 +312,7 @@
     backdrop-filter: blur(20px);
     position: relative;
     top: 10px;
+    bottom: 30px;
   }
   #mobile_resume_heading {
     margin: 20px 0 0 20px;
@@ -358,18 +359,11 @@
     margin-top: 140px;
   }
 
-  .mobile_certifications{
-    background-color: #f4f4f4;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    font-size: 14px;
-  }
-  .m_certifications1{
-   
-  border-radius: 8px;
-  object-fit: cover;
+ 
+  .m_certifications{
+   margin-top:15px;
+   margin-bottom:30px;
+
   }
   
 
