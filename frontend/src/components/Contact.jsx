@@ -46,7 +46,7 @@ const Contact = () => {
       <input type="email" name="email" autoComplete="new-name"  value={email} onChange={(e)=>setEmail(e.target.value)} required />
       
       <label>Message:</label>
-      <textarea name="message" value={message} aautoComplete="new-name"  onChange={(e)=>setMsg(e.target.value)} required />
+      <textarea name="message" value={message} autoComplete="new-name"  onChange={(e)=>setMsg(e.target.value)} required />
       
       <button type="submit">Submit</button>
     </form>
