@@ -28,6 +28,7 @@ import coding_photo from "./img/coading.png";
 import profile_photo from "./img/photo.jpg";
 import pythonfordata from "./img/pythonfordata.jpg";
 import programming_java from "./img/programming_java.jpg";
+import dbms from "./img/dbms.jpg";
 
 function Profile() {
   return (
@@ -299,6 +300,9 @@ function Resume() {
           </div>
           <div className="certifications">
           <img src={pythonfordata} alt="img" />
+          </div>
+          <div className="certifications">
+          <img src={dbms} alt="img" />
           </div>
           </div>
         </div>
