@@ -4,10 +4,11 @@ function ContactInfo() {
   const [mycontacts, setMycontacts] = useState([]);
   const [password, setPassword] = useState('');
   const [isAuthenticate, setIsAuthenticate] = useState(false);
+  const backendurl="https://portfolio-backend-mae6.onrender.com";
 
   const handleAuth = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/contactinfo?password=${password}`, {
+      const response = await fetch(`${backendurl}/contactinfo?password=${password}`, {
         method: 'GET',
       });
   
