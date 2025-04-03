@@ -1,14 +1,12 @@
 import React, { useState,useEffect } from 'react';
 
 
-
-
-
 const Contact = () => {
   const[name,setName]=useState("")
   const[email,setEmail]=useState("")
   const[message,setMsg]=useState("")
    const formData={name,email,message}
+  const backendurl="https://portfolio-backend-mae6.onrender.com";
 
    
    useEffect(() => {
@@ -19,7 +17,7 @@ const Contact = () => {
  const handleSubmit = async (e) => {
     e.preventDefault();
     try{
-     const response = await fetch('http://localhost:5000/contact', {
+     const response = await fetch(`{backendurl}/contact`, {
        method: 'POST',
        headers: { 'Content-Type': 'application/json' },
        body: JSON.stringify(formData),
