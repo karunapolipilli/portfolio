@@ -276,20 +276,21 @@ function Contact() {
   };
 
   
-  let contact = (
-    <div id="contact_section">
-      <form id="mobile_form">
+   return (
+    <div>
+      <form id="form" onSubmit={handleSubmit}>
         <div>
           <h2>Contact me</h2>
           <br />
         </div>
-        <div id="textmail">
+        <div id="txtmail">
           <div>
             <input
               type="text"
               placeholder="Full Name"
               id="Fname"
               name="firstname"
+              onChange={(e)=>setName(e.target.value)}
             ></input>
             <br />
             <br />
@@ -299,8 +300,9 @@ function Contact() {
               <input
                 type="email"
                 placeholder="Email address"
-                id="Mailid"
+                id="mailid"
                 name="mailid"
+                onChange={(e)=>setEmail(e.target.value)} 
               ></input>
             </div>
             <br />
@@ -308,25 +310,14 @@ function Contact() {
         </div>
         <br />
         <div>
-          <input type="text" placeholder="Type Message" id="Msg"></input>
+          <input type="text" placeholder="Type Message" id="msg"  onChange={(e)=>setMsg(e.target.value)}></input>
         </div>
-        <br />
-        <input type="Submit" value="Send Message" id="mobile_submit"></input>
+        <br />{" "}
+        <div>
+          <input type="submit" value="Send Message" id="mobile_submit"></input>
+        </div>
       </form>
     </div>
-  );
-  return contact;
-}
-function MobileMain() {
-  return (
-    <main id="mobileMain">
-      <Profile />
-      <About />
-      <Skills />
-      <Resume />
-      <Projects />
-      <Contact />
-    </main>
   );
 }
 
