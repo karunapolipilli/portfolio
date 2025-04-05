@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import profile_photo from "../img/photo.jpg";
 import dbms from "../img/dbms.jpg";
 import pythonfordata from "../img/pythonfordata.jpg";
@@ -233,21 +233,50 @@ function Projects() {
   );
   return projects;
 }
+
 function Contact() {
-  let contact = (
-    <div id="contact_section">
-      <form id="mobile_form">
+  const[name,setName]=useState("")
+  const[email,setEmail]=useState("")
+  const[message,setMsg]=useState("")
+   const formData={name,email,message}
+
+ const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("Form submitted", formData);
+    try{
+     const response = await fetch('http://localhost:5000/user/add-user', {
+       method: 'POST',
+       headers: { 'Content-Type': 'application/json' },
+       body: JSON.stringify(formData),
+     
+     });
+   
+   if(response.ok){
+     alert('Contact added successfully!');
+     } else {
+       alert('Error adding contact');
+     }
+   } catch (error) {
+     alert('Error: ' + error.message);
+   }
+
+  };
+
+  return (
+    <div>
+      <form id="form" onSubmit={handleSubmit}>
         <div>
           <h2>Contact me</h2>
           <br />
         </div>
-        <div id="textmail">
+        <div id="txtmail">
           <div>
             <input
               type="text"
               placeholder="Full Name"
-              id="Fname"
+              id="fname"
               name="firstname"
+              onChange={(e)=>setName(e.target.value)}
             ></input>
             <br />
             <br />
@@ -257,8 +286,9 @@ function Contact() {
               <input
                 type="email"
                 placeholder="Email address"
-                id="Mailid"
+                id="mailid"
                 name="mailid"
+                onChange={(e)=>setEmail(e.target.value)} 
               ></input>
             </div>
             <br />
@@ -266,14 +296,16 @@ function Contact() {
         </div>
         <br />
         <div>
-          <input type="text" placeholder="Type Message" id="Msg"></input>
+          <input type="text" placeholder="Type Message" id="msg"  onChange={(e)=>setMsg(e.target.value)}></input>
         </div>
-        <br />
-        <input type="Submit" value="Send Message" id="mobile_submit"></input>
+        <br />{" "}
+        <div>
+          <input type="submit" value="Send Message" id="submit"></input>
+        </div>
       </form>
     </div>
+   
   );
-  return contact;
 }
 function MobileMain() {
   return (
