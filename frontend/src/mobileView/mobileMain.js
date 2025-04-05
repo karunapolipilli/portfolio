@@ -242,9 +242,9 @@ function Contact() {
 
  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted", formData);
+    
     try{
-     const response = await fetch('https://portfolio-backend-mae6.onrender.com/user/add-user', {
+      const response = await fetch('https://portfolio-backend-mae6.onrender.com/user/add-user', {
        method: 'POST',
        headers: { 'Content-Type': 'application/json' },
        body: JSON.stringify(formData),
