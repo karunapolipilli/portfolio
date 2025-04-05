@@ -435,7 +435,7 @@ function Content({ currentPage }) {
 function App() {
   const [contacts, setContacts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/api/contacts")
+    fetch("https://portfolio-backend-mae6.onrender.com/api/contacts")
       .then((response) => response.json())
       .then((data) => setContacts(data))
       .catch((error) => console.error("Error fetching contacts:", error));
