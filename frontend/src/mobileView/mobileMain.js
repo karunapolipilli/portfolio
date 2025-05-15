@@ -111,11 +111,11 @@ function Skills() {
       </div>
       <div id="mobile_skills_set">
         <div className="mobile_skills">
-          <h3>Professional Skills</h3>
+          <h3>Technical Skills</h3>
           <ul>
-            <li>Communication skills</li>
-            <li>Problem Solving</li>
+            
             <li>DSA</li>
+            <li>SQL</li>
           </ul>
         </div>
         <div className="mobile_skills">
@@ -124,19 +124,19 @@ function Skills() {
             <li>HTML5</li>
             <li>CSS3</li>
             <li>JavaScript</li>
-            <li>React (js framework)</li>
+            <li>React Js</li>
           </ul>
         </div>
         <div className="mobile_skills">
           <h3>Backend Skills</h3>
           <ul>
-            <li>Nodejs (backend language)</li>
-            <li>Express.js (framework)</li>
-            <li>MongoDB (DataBase)</li>
+            <li>Node Js</li>
+            <li>Express Js </li>
+            <li>MongoDB </li>
           </ul>
         </div>
         <div className="mobile_skills">
-          <h3>Technical Skills</h3>
+          <h3>Tools</h3>
           <ul>
             <li>Github</li>
           </ul>
