@@ -327,15 +327,15 @@ function Projects() {
           <h4>Technologies:</h4>
           <p>HTML, CSS, JavaScript, React, Node.js, Express.js ,MongoDB</p>
         </div>
-        {/* <div className="projects">
-          <h3>E-Commerce Webiste</h3>
+        <div className="projects">
+          <h3>Plant Disease Detection</h3>
           <p>
-            An e-commerce platform with product listings, cart, and payment
-            integration.
+            Identifies plant diseases from leaf images using a Convolutional Neural Network (CNN) model for accurate classification.
+            
           </p>
           <h4>Technologies:</h4>
-          <p>React, Node.js, Express, MongoDB</p>
-        </div> */}
+          <p>React JS, Tensorflow,Gradio</p>
+        </div>
       </div>
     </div>
   );
